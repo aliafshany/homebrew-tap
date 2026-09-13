@@ -18,13 +18,8 @@ brew install --cask firelink
 ### Note on Firelink and Gatekeeper
 
 Firelink releases are ad-hoc signed and not notarized, so macOS blocks the app
-after a normal install. Install it without the quarantine flag:
-
-```sh
-brew install --cask --no-quarantine firelink
-```
-
-Or clear the flag after installing:
+after install. Homebrew 6.0 removed `--no-quarantine`, so clear the flag
+yourself once, after installing or upgrading:
 
 ```sh
 xattr -dr com.apple.quarantine /Applications/Firelink.app
