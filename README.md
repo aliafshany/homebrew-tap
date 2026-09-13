@@ -1,0 +1,31 @@
+# aliafshany/tap
+
+Homebrew casks for macOS apps that are not in homebrew-cask.
+
+## Install
+
+```sh
+brew tap aliafshany/tap
+brew install --cask firelink
+```
+
+## Casks
+
+| Cask | Description |
+| --- | --- |
+| `firelink` | [Firelink](https://github.com/nimbold/Firelink) — download manager for direct files, browser handoffs, media, and playlists. Apple Silicon only. |
+
+### Note on Firelink and Gatekeeper
+
+Firelink releases are ad-hoc signed and not notarized, so macOS blocks the app
+after a normal install. Install it without the quarantine flag:
+
+```sh
+brew install --cask --no-quarantine firelink
+```
+
+Or clear the flag after installing:
+
+```sh
+xattr -dr com.apple.quarantine /Applications/Firelink.app
+```
